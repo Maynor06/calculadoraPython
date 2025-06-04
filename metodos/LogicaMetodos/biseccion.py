@@ -3,6 +3,7 @@ from sympy import *
 def biseccion(funcion, puntoA, puntoB, tolerancia, max_iteraciones = 100):
     x = symbols('x')
     try:
+        funcion = funcion.replace('^', '**')
         funcionExp = sympify(funcion)
         funcionEvaluable = lambdify(x, funcionExp)
     except Exception as error:

@@ -1,8 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from metodos.LogicaMetodos.biseccion import biseccion
-from metodos.forms import BiseccionForm
-
+from metodos.forms import BiseccionForm, NewtonForm
+from metodos.LogicaMetodos.NewthonRaphson import newton_raphson
 
 # Create your views here.
 
@@ -23,6 +23,23 @@ def viewBiseccion(request):
         form = BiseccionForm()
 
     return render(request, 'biseccion_formulario.html', {
+        'form': form,
+        'resultado': resultado
+    })
+
+def viewNewton(request):
+    resultado = None
+    if request.method == "POST":
+        form = NewtonForm(request.POST)
+        if form.is_valid():
+            funcion = form.cleaned_data['funcion']
+            valorInicial = form.cleaned_data['valorInicial']
+            tolerancia = form.cleaned_data['tolerancia']
+            resultado = newton_raphson(funcion, valorInicial, tolerancia)
+    else:
+        form = NewtonForm()
+
+    return render(request, 'newton.html', {
         'form': form,
         'resultado': resultado
     })
