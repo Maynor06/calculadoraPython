@@ -1,26 +1,28 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .LogicaMetodos import metodo_biseccion
+from metodos.LogicaMetodos.biseccion import biseccion
+from metodos.forms import BiseccionForm
+
+
 # Create your views here.
 
 def inicio(request):
     return HttpResponse("Bienvenido a  la calculadora de métodos numéricos")
 
 def viewBiseccion(request):
+    resultado = None
     if request.method == "POST":
-        funcion = request.POST.get("funcion")
-        puntoA = float(request.POST.get("puntoA"))
-        puntoB = float(request.POST.get("puntoB"))
-        tolerancia = float(request.POST.get("tolerancia"))
+        form = BiseccionForm(request.POST)
+        if form.is_valid():
+            funcion = form.cleaned_data['funcion']
+            puntoA = form.cleaned_data['puntoA']
+            puntoB = form.cleaned_data['puntoB']
+            tolerancia = form.cleaned_data['tolerancia']
+            resultado = biseccion(funcion, puntoA, puntoB, tolerancia)
+    else:
+        form = BiseccionForm()
 
-        resultado = metodo_biseccion(funcion, puntoA, puntoB, tolerancia)
-
-        return render(request, 'biseccion_resultado.html', {
-            "funcion": funcion,
-            "punto a": puntoA,
-            "punto b": puntoB,
-            "tolerancia": tolerancia,
-            "resultado": resultado
-        })
-
-    return render(request, 'biseccion_form.html')
+    return render(request, 'biseccion_formulario.html', {
+        'form': form,
+        'resultado': resultado
+    })
