@@ -25,26 +25,36 @@ Instala las dependencias con:
 bash
 pip install -r requirements.txt
 
+## 🌐 Pruébalo en línea
+
+Puedes acceder a la calculadora web desde el siguiente enlace:
+
+➡️ [Abrir aplicación desplegada en Render](https://calculadorapython-51ei.onrender.com/)
+
 ## 🖼 Vista previa
 
 Aquí una pequeña muestra de cómo se ve la aplicación en funcionamiento:
 
-![Vista previa de la app](https://i.imgur.com/coloca_aqui_tu_imagen.png)
+![Vista previa de la app](![image](https://github.com/user-attachments/assets/2600e4ea-7590-4b12-a329-158f3a11cda3)
 
 ## 📹 Demostración en video
 
 Muy pronto podrás ver una demostración completa del proyecto en el siguiente enlace:
 
-➡️ [Ver video en YouTube](https://youtube.com/coloca_tu_video)
-## 🙌 Agradecimientos
+➡️ [Ver video](https://drive.google.com/file/d/1C7baQmbQ_B1ZP9PQ5wPA_j6aBeaBuZrz/view?usp=sharing)
 
-Gracias por visitar este repositorio. Si el proyecto te fue útil o interesante:
+---
 
-- ⭐ **Dale una estrella**
-- 🤝 **Comparte con tus colegas**
-- 💌 **[Contáctanos si tienes preguntas o sugerencias](damynor488@gmail.com)**
+## 📬 Contáctanos y síguenos
 
-Puedes abrir un *issue* o escribirnos directamente.
+¿Tienes preguntas, sugerencias o simplemente quieres saludar? ¡Nos encantaría saber de ti!
 
-¡Tu apoyo nos motiva a seguir mejorando y creando más contenido educativo!
+- 🐙 [GitHub](https://github.com/Maynor06)
+- 💼 [LinkedIn](https://www.linkedin.com/in/maynor-semeya/)
+- 📧 [Correo](mailto:dmaynor488@gmail.com)
 
+---
+
+## 💡 ¡Tu apoyo es muy valioso!  
+ Si te gustó este proyecto, considera dejar una ⭐, compartirlo o contribuir.
+ 
