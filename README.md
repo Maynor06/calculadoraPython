@@ -31,6 +31,8 @@ Puedes acceder a la calculadora web desde el siguiente enlace:
 
 ➡️ [Abrir aplicación desplegada en Render](https://calculadorapython-51ei.onrender.com/)
 
+➡️ [Si el de arriba no le funcione pruebe con este en Railway](https://web-production-a5d3.up.railway.app/)
+
 ## 🖼 Vista previa
 
 Aquí una pequeña muestra de cómo se ve la aplicación en funcionamiento:
