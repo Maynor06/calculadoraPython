@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora Numérica</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="p-4 bg-light">
+    <div class="container">
+        <h1 class="text-center mb-5">Calculadora de Métodos Numéricos</h1>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Tarjeta 1 -->
+            <div class="col">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-diagram-3-fill display-4 text-primary"></i>
+                        <h5 class="card-title mt-3">Método de Bisección</h5>
+                        <p class="card-text">Encuentra raíces mediante aproximación entre intervalos con signos opuestos.</p>
+                        <a href="{% url 'biseccion' %}" class="btn btn-primary">Ir al método</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="col">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-graph-up-arrow display-4 text-success"></i>
+                        <h5 class="card-title mt-3">Newton-Raphson</h5>
+                        <p class="card-text">Utiliza la derivada para aproximar la raíz con rapidez.</p>
+                        <a href="{% url 'newton' %}" class="btn btn-success">Ir al método</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="col">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-lightning-charge-fill display-4 text-warning"></i>
+                        <h5 class="card-title mt-3">Newton-Raphson Modificado</h5>
+                        <p class="card-text">Mejora la precisión usando la segunda derivada.</p>
+                        <a href="{% url 'newtonRaphsonModificado' %}" class="btn btn-dark">Ir al método</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

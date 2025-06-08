@@ -3,7 +3,7 @@ from sympy import symbols, sympify, lambdify, diff
 def newton_raphson(funcion, valor_inicial, tolerancia, max_iteraciones=100):
     x = symbols('x')
     try:
-        funcion = funcion.replace('^', '**')  # Corrige potencias si el usuario usa ^
+        funcion = funcion.replace('^', '**')
         f_expr = sympify(funcion)
         f_derivada_expr = diff(f_expr, x)
 
@@ -30,9 +30,9 @@ def newton_raphson(funcion, valor_inicial, tolerancia, max_iteraciones=100):
             iteraciones.append({
                 "iteracion": i,
                 "xn": xn,
-                "f(xn)": fxn,
-                "f'(xn)": fpxn,
-                "xn+1": siguiente,
+                "f_xn": fxn,
+                "f1_xn": fpxn,
+                "xn_siguiente": siguiente,
                 "error": error_aprox
             })
 

@@ -19,6 +19,7 @@
         {% else %}
             <div class="mt-4">
                 <h3>Resultado: {{ resultado.resultado }}</h3>
+                <p>iteraciones: {{ resultado.iteraciones|length }}</p>
                 <p>Convergencia: {{ resultado.convergencia }}</p>
 
                 <h4 class="mt-4">Iteraciones</h4>
@@ -38,6 +39,9 @@
                         <tr>
                             <td>{{ fila.iteracion }}</td>
                             <td>{{ fila.xn }}</td>
+                            <td>{{ fila.f_xn }}</td>
+                            <td>{{ fila.f1_xn }}</td>
+                            <td>{{ fila.xn_siguiente }}</td>
                             <td>{{ fila.error }}</td>
                         </tr>
                         {% endfor %}
@@ -46,5 +50,9 @@
             </div>
         {% endif %}
     {% endif %}
+    <div class="mt-4">
+        <a href="{% url 'inicio' %}" class="btn btn-secondary">⟵ Regresar al inicio</a>
+    </div>
+
 </body>
 </html>

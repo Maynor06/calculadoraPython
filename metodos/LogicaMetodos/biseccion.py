@@ -17,7 +17,7 @@ def biseccion(funcion, puntoA, puntoB, tolerancia, max_iteraciones = 100):
 
     iteraciones = []
     for i in range(1, max_iteraciones + 1):
-        puntoMedio = (puntoB - puntoA) / 2
+        puntoMedio = (puntoA + puntoB) / 2
         puntoMedioCalculado = funcionEvaluable(puntoMedio)
         errorAbsoluto = abs(puntoB - puntoA) / 2
 

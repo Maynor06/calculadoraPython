@@ -35,12 +35,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for fila in resultado.iteraciones %}
+                        {% for fila in resultado.historial %}
                         <tr>
                             <td>{{ fila.iteracion }}</td>
                             <td>{{ fila.aproximacion }}</td>
+                            <td>{{ fila.valorFuncion }}</td>
+                            <td>{{ fila.valorDerivada }} </td>
+                            <td>{{ fila.valorSegundaDerivada }} </td>
                             <td>{{ fila.nueva_aproximacion }}</td>
-                            <td>{{ fila.error }}</td>
+                            <td>{{ fila.error_aproximado }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>

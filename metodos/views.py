@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
+from metodos.LogicaMetodos.NewthonRaphson import newton_raphson
 from metodos.LogicaMetodos.NewtonRaphsonModificado import newtonRaphsonModificado
 from metodos.LogicaMetodos.biseccion import biseccion
 from metodos.forms import BiseccionForm, NewtonForm, NewtonRaphsonModificadoForm
@@ -8,7 +9,7 @@ from metodos.forms import BiseccionForm, NewtonForm, NewtonRaphsonModificadoForm
 # Create your views here.
 
 def inicio(request):
-    return HttpResponse("Bienvenido a  la calculadora de métodos numéricos")
+    return render(request, 'inicio.html')
 
 def viewBiseccion(request):
     resultado = None
@@ -36,10 +37,10 @@ def viewNewton(request):
             funcion = form.cleaned_data['funcion']
             valorInicial = form.cleaned_data['valorInicial']
             tolerancia = form.cleaned_data['tolerancia']
-            resultado = newtonRaphsonModificado(funcion, valorInicial, tolerancia)
+            resultado = newton_raphson(funcion, valorInicial, tolerancia)
     else:
         form = NewtonForm()
-
+    print(resultado)
     return render(request, 'newton.html', {
         'form': form,
         'resultado': resultado
@@ -53,13 +54,12 @@ def viewNewtonRaphsonModificado(request):
             funcion = form.cleaned_data['funcion']
             valorInicial = form.cleaned_data['valorInicial']
             tolerancia = form.cleaned_data['tolerancia']
-            maxIteraciones = form.cleaned_data.get('maxIteraciones', 100)
 
-            resultado = newtonRaphsonModificado(funcion, valorInicial, tolerancia, maxIteraciones)
+            resultado = newtonRaphsonModificado(funcion, valorInicial, tolerancia)
     else:
         form = NewtonRaphsonModificadoForm()
 
-    return render(request, 'NewtonRaphsonModificado.html', {
+    return render(request, 'newtonRaphsonModificado.html', {
         'form': form,
         'resultado': resultado
     })
